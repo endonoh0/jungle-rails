@@ -55,3 +55,6 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# development settings file for vscode
+.vscode/
