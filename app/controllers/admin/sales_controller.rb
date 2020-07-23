@@ -4,4 +4,30 @@ class Admin::SalesController < ApplicationController
   def index
     @sales = Sale.all
   end
+
+  def new
+    @sale = Sale.new
+  end
+
+  def create
+    @sale = Sale.new(sales_param)
+
+    if @sale.save
+      redirect_to [:admin, :sales], notice: 'Sale created!'
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def sales_param
+    params.require(:sale).permit(
+      :name,
+      :starts_on,
+      :ends_on,
+      :percent_off
+    )
+  end
+
 end
