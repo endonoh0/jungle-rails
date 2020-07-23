@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:create, :show]
+  resource :session, only: [:new, :create, :destroy]
 
   namespace :admin do
     root to: 'dashboard#show'
@@ -18,7 +19,16 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :new, :create]
   end
 
+  # these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
   get "/:page" => "static#show"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
