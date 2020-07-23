@@ -5,17 +5,35 @@
   </header><br>
 
   <div class="well container-fluid">
-      <div class="items">
+
+      <div class="flex">
         <div class="font-bold">
          <p><i class="fa fa-gift fa-3x"></i></p>
           <h3><%= @products - 1 %>+</h3>
           <%= link_to 'Products', [:admin, :products], class: 'btn btn-info' %>
         </div>
+
         <div class="font-bold">
           <p><i class="fa fa-th fa-3x"></i></p>
           <h3><%= @categories - 1%>+</h3>
-          <p>Categories</p>
+          <div class="dropdown">
+            <button
+              class="btn btn-info dropdown-toggle"
+              type="button" id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >
+              Categories
+            </button>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <% Category.all.each do |category| %>
+                <li><%= link_to category.name, category %></li>
+              <% end %>
+          </div>
         </div>
-      </div>
+    </div>
+
   </div>
 </section>
