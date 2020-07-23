@@ -16,22 +16,7 @@
         <div class="font-bold">
           <p><i class="fa fa-th fa-3x"></i></p>
           <h3><%= @categories - 1%>+</h3>
-          <div class="dropdown">
-            <button
-              class="btn btn-info dropdown-toggle"
-              type="button" id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              >
-              Categories
-            </button>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <% Category.all.each do |category| %>
-                <li><%= link_to category.name, category %></li>
-              <% end %>
-          </div>
+          <%= link_to 'Categories', [:admin, :categories], class: 'btn btn-info' %>
         </div>
     </div>
 
