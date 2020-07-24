@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20200723174110) do
   create_table "messages", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
-    t.text    "body",                         null: false
-    t.date    "created_at", default: "now()"
+    t.text    "body",                              null: false
+    t.date    "created_at", default: '2020-07-24'
   end
 
   create_table "orders", force: :cascade do |t|
