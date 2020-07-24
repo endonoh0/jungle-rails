@@ -53,7 +53,7 @@
 
         <% if current_user %>
           <li class="current_user">
-            <a href="#">Signed in as <%= current_user.first_name %> <%= current_user.last_name %></a>
+            <a href="#" class="no-pointer">Signed in as <%= current_user.first_name %> <%= current_user.last_name %></a>
           </li>
           <li class="logout">
             <%= link_to "Logout", logout_path %>

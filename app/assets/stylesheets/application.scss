@@ -13,6 +13,10 @@ body {
   padding-top: 70px;
 }
 
+.no-pointer {
+  pointer-events: none;
+}
+
 // Bootstrap adjustments
 form.button_to {
   display: inline;
