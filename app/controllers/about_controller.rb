@@ -1,6 +1,6 @@
 class AboutController < ApplicationController
 
   def show
-    render params[:page]
+    render template: "about/show"
   end
 end
