@@ -1,4 +1,4 @@
-class StaticController < ApplicationController
+class AboutController < ApplicationController
 
   def show
     render params[:page]
