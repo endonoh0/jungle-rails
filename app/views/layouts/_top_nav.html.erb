@@ -45,13 +45,13 @@
             <li><%= link_to 'Sales',  [:admin, :sales] %></li>
           </ul>
         </li>
-        <li>
-          <%= link_to cart_path do %>
-            <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
-          <% end %>
-        </li>
 
         <% if current_user %>
+          <li>
+            <%= link_to cart_path do %>
+              <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
+            <% end %>
+          </li>
           <li class="current_user">
             <a href="#" class="no-pointer">Signed in as <%= current_user.first_name %> <%= current_user.last_name %></a>
           </li>
