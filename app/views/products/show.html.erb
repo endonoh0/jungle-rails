@@ -25,7 +25,35 @@
         </dl>
       </div>
     </div>
-
   </article>
+    <table class="table table-bordered">
+      <tr>
+        <th>User</th>
+        <th>Review</th>
+        <th>Stars</th>
+      </tr>
+    <% @product.reviews.each do |review|%>
+     <td><%=review.user_id%></td>
+     <td><%=review.description%></td>
+     <td><%=review.rating%></td>
+    <% end %>
+  </table>
+  <form class="form">
+    <div class="">
+      <%= form_for [@product, @product.reviews.new], url: product.reviews_path do |form| %>
 
+        <div class="form-group">
+          <%= form.label :rating %>
+          <%= form.select :rating, options_for_select([1, 2, 3, 4, 5]), class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :description %>
+          <%= form.text_field :description, class: 'form-control' %>
+        </div>
+
+        <%= form.submit 'Create Review', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </form>
 </section>
