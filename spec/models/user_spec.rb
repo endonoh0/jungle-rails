@@ -77,10 +77,16 @@ RSpec.describe User, type: :model do
       expect(User.authenticate_with_credentials(subject.email, subject.password)).to_not eq(nil)
     end
 
-    it "Should login the user with trailing space in their email" do
+    it "Should login an user with trailing space in their email" do
       expect(subject).to be_valid
       subject.save
-      expect(User.authenticate_with_credentials(subject.email, subject.password)).to_not eq(nil)
+      expect(User.authenticate_with_credentials(' test@test.com ', subject.password)).to_not eq(nil)
+    end
+
+    it "Should login an user with the incorrect case for their email" do
+      expect(subject).to be_valid
+      subject.save
+      expect(User.authenticate_with_credentials(' TEST@test.COM ', subject.password)).to_not eq(nil)
     end
   end
 
