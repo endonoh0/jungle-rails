@@ -20,14 +20,9 @@ RSpec.describe User, type: :model do
     context "Password: and Password_confirmation" do
 
       it "Should be invalid when the passwords do not match" do
-        expect(
-          User.create(
-              first_name: "Tom",
-              last_name: "Jerry",
-              email: "TEST@test.com",
-              password: "123456",
-              password_confirmation: "password"
-          )).to_not be_valid
+        subject.password = "123456"
+        subject.password_confirmation = "incorrect"
+        expect(subject).to_not be_valid
       end
 
       it "Should be invalid when the password fields are undefined" do
@@ -41,7 +36,7 @@ RSpec.describe User, type: :model do
           User.create(
             first_name: "Ben",
             last_name: "Jerry",
-            email: "TEST@test.com",
+            email: "another@test.com",
             password: "1234",
             password_confirmation: "1234"
           )).to_not be_valid
