@@ -37,6 +37,9 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+  # Secret token for testing
+  config.secret_token = SecureRandom.hex(64)
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
