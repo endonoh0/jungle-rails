@@ -14,10 +14,12 @@ class ReviewsController < ApplicationController
     # end
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
+    @review.user = current_user
+
     if @review.save
       redirect_to :back, notice: 'Review created!'
     else
-      redirect_to [:login]
+      redirect_to product_path(@product.id)
     end
   end
 
@@ -25,8 +27,8 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(
-      :product_id
-      :rating
-      :description
+      :product_id,
+      :rating,
+      :description)
   end
 end
