@@ -27,16 +27,22 @@
     </div>
   </article>
     <table class="table table-bordered">
-      <tr>
-        <th>User</th>
-        <th>Review</th>
-        <th>Stars</th>
-      </tr>
-    <% @product.reviews.each do |review|%>
-     <td><%=review.user_id%></td>
-     <td><%=review.description%></td>
-     <td><%=review.rating%></td>
-    <% end %>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Stars</th>
+          <th>Review</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @product.reviews.reverse.each do |review|%>
+          <tr>
+            <td><%=review.user.first_name%></td>
+            <td><%=review.rating%></td>
+            <td><%=review.description%></td>
+          </tr>
+        <% end %>
+      </tbody>
   </table>
   <form class="form">
     <div class="">
