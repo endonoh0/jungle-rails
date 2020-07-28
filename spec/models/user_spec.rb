@@ -67,25 +67,21 @@ RSpec.describe User, type: :model do
       end
     end
 
-    describe '.authenticate_with_credentials' do
-      it "Should login an authenticated user" do
-        expect(subject).to be_valid
-        subject.save
-        expect(User.authenticate_with_credentials(subject.email, subject.password)).to_not eq(nil)
-      end
+  end
+
+  describe '.authenticate_with_credentials' do
+
+    it "Should login an authenticated user" do
+      expect(subject).to be_valid
+      subject.save
+      expect(User.authenticate_with_credentials(subject.email, subject.password)).to_not eq(nil)
     end
 
-
-
-
-
-
-
-
-
-
-
-
-
+    it "Should login the user with trailing space in their email" do
+      expect(subject).to be_valid
+      subject.save
+      expect(User.authenticate_with_credentials(subject.email, subject.password)).to_not eq(nil)
+    end
   end
+
 end
