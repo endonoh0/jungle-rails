@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
 
       if @user && @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
-        redirect_to root_path
+        redirect_to root_path, notice: "Welcome back, #{@user.first_name}!"
       else
-        redirect_to login_path
+        redirect_to login_path, notice: "Email or password is incorrect"
       end
   end
 
