@@ -14,11 +14,19 @@
         </div>
 
         <div class="font-bold">
-          <p><i class="fa fa-th fa-3x"></i></p>
-          <h3><%= @categories - 1%>+</h3>
-          <%= link_to 'Categories', [:admin, :categories], class: 'btn btn-info' %>
+          <p><i class="fa fa-gift fa-3x"></i></p>
+          <h3><%= @sales %></h3>
+          <%= link_to "#{@sales > 1 ? 'Sales' : 'Sale'}", [:admin, :sales], class: 'btn btn-info' %>
+        </div
+
+        <div class="font-bold">
+          <div>
+            <i class="fa fa-th fa-3x"></i>
+            <h3><%= @categories - 1%>+</h3>
+            <%= link_to 'Categories', [:admin, :categories], class: 'btn btn-info' %>
+          </div>
         </div>
-    </div>
+      </div>
 
   </div>
 </section>
