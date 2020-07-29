@@ -1,0 +1,23 @@
+<thead>
+  <tr>
+    <th>User</th>
+    <th>Stars</th>
+    <th>Review</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% @product.reviews.reverse.each do |review|%>
+    <tr>
+      <td><%=review.user.first_name%></td>
+      <td><%=review.rating%></td>
+      <td><%=review.description%></td>
+
+      <% if review.user.id == current_user.id %>
+        <td>
+          <%= link_to fa_icon('trash'), product_review_path(@product.id, review), class: 'btn btn-sm btn-danger', method: :delete %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</tbody>
