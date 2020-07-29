@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>User</th>
+      <th>Posted</th>
       <th>Rating</th>
       <th>Review</th>
     <% @product.reviews.reverse.each do |review| %>
@@ -14,6 +15,7 @@
   <tbody>
       <tr>
         <td class="center"><%= review.user.first_name %></td>
+        <td class="center overflow"><%= review.created_at.strftime("%B %d, %Y") %></td>
         <td class="<%= getStars(review.rating) %> yellow center"></td>
         <td><%= review.description %></td>
         <% if current_user %>

@@ -87,6 +87,10 @@ main section.products-show {
   .yellow {
     color: #FDCC0D;
   }
+  .overflow {
+    overflow: hidden;
+    white-space: nowrap;
+  }
   form {
     padding: 25px;
     margin: 5em;
