@@ -1,17 +1,10 @@
 class ReviewsController < ApplicationController
 
   def new
-    @review = Review.new
+    before_filter :authorize
   end
 
   def create
-    # @review = Review.new(review_params)
-
-    # if @review.save
-    #   redirect_to :back
-    # else
-    #   redirect_to root_path
-    # end
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     @review.user = current_user
@@ -21,6 +14,13 @@ class ReviewsController < ApplicationController
     else
       redirect_to product_path(@product.id)
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to product_path(@product.id), notice: 'Product deleted!'
   end
 
   private

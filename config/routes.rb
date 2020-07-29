@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show] do
     root to: 'reviews#create'
-    resource :reviews, only: [:create, :destroy]
+    resources :reviews, only: [:create, :destroy]
   end
 
   resources :categories, only: [:show]
