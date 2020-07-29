@@ -10,9 +10,9 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
-      redirect_to :back
+      redirect_to product_path(@product.id), notice: "Review has been created 👍"
     else
-      redirect_to product_path(@product.id)
+      redirect_to :back, notice: "Please enter a Review and a Rating."
     end
   end
 

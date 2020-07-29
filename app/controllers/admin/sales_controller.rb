@@ -13,9 +13,9 @@ class Admin::SalesController < ApplicationController
     @sale = Sale.new(sales_param)
 
     if @sale.save
-      redirect_to [:admin, :sales], notice: 'Sale created!'
+      redirect_to [:admin, :sales], notice: 'Sale created! 🤑'
     else
-      render :new
+      render :new, notice: "Please fill in the form fields"
     end
   end
 

@@ -166,19 +166,27 @@ Review.create!({
   product_id: 12,
   user_id: 1,
   rating: "4",
-  description: "I like it!"
+  description: Faker::Hipster.paragraph(4)
 })
 
 Review.create!({
   product_id: 12,
   user_id: 2,
   rating: "5",
-  description: "Take my money!"
+  description: Faker::Hipster.paragraph(4)
 })
 
 Review.create!({
   product_id: 12,
   user_id: 3,
   rating: "5",
-  description: "This is a must have."
+  description: Faker::Hipster.paragraph(4)
+})
+
+## Sale
+Sale.create!({
+  name: "Summer Sale",
+  percent_off: 50,
+  starts_on: DateTime.current.to_date,
+  ends_on: 10.days.from_now
 })

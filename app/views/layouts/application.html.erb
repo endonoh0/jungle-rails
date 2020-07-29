@@ -15,9 +15,15 @@
   <main class="container">
 
     <% if active_sale? %>
-      <p class="alert alert-info">
+      <p class="alert alert-info center">
         There's an active <strong><%= @sale.name %></strong> going on!
         <strong>Everything is <%= @sale.percent_off %>% off!</strong>
+      </p>
+    <% end %>
+
+    <% flash.each do |type, msg| %>
+      <p class="alert alert-warning center">
+        <strong><%= msg %></strong>
       </p>
     <% end %>
 
