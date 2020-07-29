@@ -84,8 +84,37 @@ main section.products-show {
       max-width: 100%;
     }
   }
+  .yellow {
+    color: #FDCC0D;
+  }
   form {
     padding: 25px;
-    margin: auto;
+    margin: 5em;
+  }
+  th {
+    text-align: center;
+  }
+  td.center {
+    text-align: center;
+  }
+  td.star1:after {
+   content: "\f005"; /* 1 Stars */
+    font-family: FontAwesome;
+  }
+  td.star2:after {
+   content: "\f005\f005"; /* 1 Stars */
+    font-family: FontAwesome;
+  }
+  td.star3:after {
+   content: "\f005\f005\f005"; /* 1 Stars */
+    font-family: FontAwesome;
+  }
+  td.star4:after {
+   content: "\f005\f005\f005\f005"; /* 1 Stars */
+    font-family: FontAwesome;
+  }
+  td.star5:after {
+   content: "\f005\f005\f005\f005\f005"; /* 1 Stars */
+    font-family: FontAwesome;
   }
 }
