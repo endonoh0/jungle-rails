@@ -1,0 +1,18 @@
+<h1>Thank you for shopping with Jungle Rails!</h1>
+
+<hr><br>
+<p>You'll find a summary of your recent purchases below:</p>
+<p>
+  <% @order.line_items.each do |item| %>
+    <p>
+      <%= item.product.name %>
+    </p>
+    <p>
+      <%= item.product.description %>
+    </p>
+  <% end %>
+<br>
+<p>Order Total: <%= @order.total %></p>
+<p>Order Number: <%= @order.id %></p><br>
+
+<p>Have a great day!</p>

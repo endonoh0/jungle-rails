@@ -1,0 +1,14 @@
+Thank you for shopping with Jungle Rails!
+===============================================
+
+You'll find a summary of your recent purchases below:
+
+<% @order.line_items.each do |item| %>
+    <%= item.product.name %>
+    <%= item.product.description %>
+<% end %>
+
+Order Total: <%= @order.total %>
+Order Id:  <%= @order.id %>
+
+Have a great day!
