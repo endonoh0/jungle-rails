@@ -5,7 +5,7 @@
       <th>Rating</th>
       <th>Review</th>
     <% @product.reviews.reverse.each do |review| %>
-      <% if verifyUser?(review.user.id, current_user.id) %>
+      <% if verifyUser?(review.user.id, current_user) %>
         <th></th>
       <% end %>
     </tr>
@@ -16,13 +16,15 @@
         <td class="center"><%= review.user.first_name %></td>
         <td class="<%= getStars(review.rating) %> yellow center"></td>
         <td><%= review.description %></td>
-        <% if verifyUser?(review.user.id, current_user.id) %>
-          <td class="center">
-            <%= link_to fa_icon('trash'),
-              product_review_path(@product.id, review),
-              class: 'btn btn-sm btn-danger', method: :delete
-            %>
-          </td>
+        <% if current_user %>
+          <% if verifyUser?(review.user.id, current_user.id) %>
+            <td class="center">
+              <%= link_to fa_icon('trash'),
+                product_review_path(@product.id, review),
+                class: 'btn btn-sm btn-danger', method: :delete
+              %>
+            </td>
+          <% end %>
         <% end %>
       </tr>
     <% end %>
