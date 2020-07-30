@@ -1,4 +1,5 @@
 module ReviewsHelper
+
   def getStars(rating)
     case rating
     when 1
@@ -17,4 +18,5 @@ module ReviewsHelper
   def verifyUser?(reviewer, user)
     reviewer === user
   end
+
 end
