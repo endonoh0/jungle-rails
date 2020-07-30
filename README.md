@@ -2,7 +2,7 @@
 
 A mini e-commerce application built with Rails 4.2.
 
-- Front-End: Bootstrap
+- Front-End: Bootstrap, Sass
 - Back-End: Rails, PostgreSQL
 - Test: Capybara, Poltergeist, RSpec
 
