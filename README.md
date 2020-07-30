@@ -8,10 +8,10 @@ A mini e-commerce application built with Rails 4.2.
 
 # Main Features
 
-- Admin users can create categories and products
+- Admin users can create categories, products, and sales
 - Logged in users can rate & review a product
 - Vistors (and all users) can place an order
-- Email reciept is sent after placing an order (Go to http://0.0.0.0:3001/rails/mailers/user_mailer/order_confirmation for a preview)
+- Email reciept is sent after placing an order (See http://0.0.0.0:3001/rails/mailers/user_mailer/order_confirmation for a preview)
 
 # Screenshots
 
