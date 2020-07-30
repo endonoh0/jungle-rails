@@ -21,7 +21,7 @@ Test: Capybara, Poltergeist, RSpec
 
 ## Product Page
 
-![Screemshot of Product Page](docs/product-details.png)
+![Screenshot of Product Page](docs/product-details.png)
 
 ## My Cart Page
 
