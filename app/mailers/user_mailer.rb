@@ -6,6 +6,6 @@ class UserMailer < ApplicationMailer
     @user = user
     @order = order
 
-    mail(to: "<#{@user.email}>", subject: "Jungle Rails Order Confirmation ##{@order.id}")
+    mail(to: "<#{@user}>", subject: "Jungle Rails Order Confirmation ##{@order.id}")
   end
 end

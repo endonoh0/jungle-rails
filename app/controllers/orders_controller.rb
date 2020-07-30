@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   def create
     charge = perform_stripe_charge
     order  = create_order(charge)
-    email = current_user ? current_user : charge.source.name
+    email = current_user ? current_user.email : charge.source.name
 
     if order.valid?
       empty_cart!

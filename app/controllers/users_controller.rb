@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      redirect_to signup_path
+      redirect_to signup_path, notice: "Please use a different email address"
     end
   end
 
