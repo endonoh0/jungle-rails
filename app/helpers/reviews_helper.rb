@@ -1,5 +1,4 @@
 module ReviewsHelper
-
   def getStars(rating)
     case rating
     when 1

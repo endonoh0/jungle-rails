@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to product_path(@product.id), notice: 'Product deleted!'
+    redirect_to product_path(@product.id), notice: 'Review deleted!'
   end
 
   private
