@@ -17,15 +17,15 @@ A mini e-commerce application built with Rails 4.2.
 
 ## Home Page
 
-![Screenshot of Home Page](docs/home-page.png)
+![Screenshot of Home Page](https://github.com/endonoh0/jungle-rails/blob/master/docs/home-page.png)
 
 ## Product Page
 
-![Screenshot of Product Page](docs/product-details.png)
+![Screenshot of Product Page](https://github.com/endonoh0/jungle-rails/blob/master/docs/product-details.png)
 
 ## My Cart Page
 
-![Screenshot of Cart](docs/my-cart-page.png)
+![Screenshot of Cart](https://github.com/endonoh0/jungle-rails/blob/master/docs/my-cart-page.png)
 
 ## Setup
 
